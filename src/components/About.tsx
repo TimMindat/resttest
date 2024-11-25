@@ -1,7 +1,10 @@
 import React from 'react';
 import { Users } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -21,19 +24,19 @@ const About = () => {
 
           <div className="md:w-1/2">
             <h2 className="text-4xl font-bold mb-6 text-gray-800">
-              About Family Pie
+              {t('about.title')}
             </h2>
             <p className="text-lg text-gray-600 mb-6">
-              At Family Pie, we bring families together with fresh, delicious pizzas, savory pies, sweet treats, and juicy burgers. Located in the heart of Madinah, we focus on quality, comfort, and unforgettable flavors!
+              {t('about.description')}
             </p>
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-orange-50 p-4 rounded-lg">
-                <h3 className="font-semibold text-gray-800 mb-2">Fresh Ingredients</h3>
-                <p className="text-gray-600">We use only the finest ingredients for our dishes.</p>
+                <h3 className="font-semibold text-gray-800 mb-2">{t('about.freshIngredients')}</h3>
+                <p className="text-gray-600">{t('about.freshIngredientsDesc')}</p>
               </div>
               <div className="bg-orange-50 p-4 rounded-lg">
-                <h3 className="font-semibold text-gray-800 mb-2">Family First</h3>
-                <p className="text-gray-600">Creating memories one meal at a time.</p>
+                <h3 className="font-semibold text-gray-800 mb-2">{t('about.familyFirst')}</h3>
+                <p className="text-gray-600">{t('about.familyFirstDesc')}</p>
               </div>
             </div>
           </div>

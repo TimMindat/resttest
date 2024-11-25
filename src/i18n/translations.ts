@@ -23,7 +23,44 @@ export default {
         familyFirst: 'Family First',
         familyFirstDesc: 'Creating memories one meal at a time.',
       },
-      // Add more translations as needed
+      menu: {
+        title: 'Explore Our Menu',
+        subtitle: 'Discover our wide selection of delicious dishes',
+        orderFavorite: 'Order Your Favorite Dishes Now!',
+      },
+      deals: {
+        title: "Today's Special Deals!",
+        subtitle: "Don't miss out on these amazing offers",
+        deal1: {
+          title: "Buy 1 Burger, Get 1 Free!",
+          description: "Valid on all burger menu items. Limited time offer.",
+        },
+        deal2: {
+          title: "50% OFF Sweet Pies",
+          description: "Enjoy our delicious dessert pies at half price.",
+        },
+        deal3: {
+          title: "Family Pizza Deal",
+          description: "2 Large Pizzas + 2 Sides for 99 SAR",
+        },
+        orderNow: "Order Now",
+      },
+      orderOnline: {
+        title: "Order Online with Ease!",
+        subtitle: "You can now enjoy Family Pie from the comfort of your home! Order through our trusted platforms.",
+        whatsapp: "Order via WhatsApp",
+      },
+      social: {
+        title: "Stay Connected with Family Pie!",
+        subtitle: "Follow us on social media for the latest updates and special offers",
+      },
+      footer: {
+        slogan: "Where delicious moments are shared with family and friends.",
+        quickLinks: "Quick Links",
+        contactInfo: "Contact Info",
+        address: "Abdul Muhsin Ibn Abdul Aziz, Al Jumuah, Madinah, Saudi Arabia",
+        rights: "All Rights Reserved.",
+      },
     },
   },
   ar: {
@@ -50,7 +87,44 @@ export default {
         familyFirst: 'العائلة أولاً',
         familyFirstDesc: 'نصنع الذكريات وجبة تلو الأخرى.',
       },
-      // Add more translations as needed
+      menu: {
+        title: 'استكشف قائمتنا',
+        subtitle: 'اكتشف مجموعتنا الواسعة من الأطباق اللذيذة',
+        orderFavorite: 'اطلب أطباقك المفضلة الآن!',
+      },
+      deals: {
+        title: "عروض اليوم المميزة!",
+        subtitle: "لا تفوت هذه العروض المذهلة",
+        deal1: {
+          title: "اشترِ برجر واحصل على الثاني مجاناً!",
+          description: "العرض ساري على جميع البرجر. لفترة محدودة.",
+        },
+        deal2: {
+          title: "خصم 50٪ على الفطائر الحلوة",
+          description: "استمتع بفطائرنا اللذيذة بنصف السعر.",
+        },
+        deal3: {
+          title: "عرض البيتزا العائلي",
+          description: "2 بيتزا كبيرة + 2 إضافات بـ 99 ريال",
+        },
+        orderNow: "اطلب الآن",
+      },
+      orderOnline: {
+        title: "اطلب اونلاين بكل سهولة!",
+        subtitle: "يمكنك الآن الاستمتاع بفاميلي باي من راحة منزلك! اطلب عبر منصاتنا الموثوقة.",
+        whatsapp: "اطلب عبر واتساب",
+      },
+      social: {
+        title: "ابقَ على تواصل مع فاميلي باي!",
+        subtitle: "تابعنا على وسائل التواصل الاجتماعي للحصول على آخر التحديثات والعروض الخاصة",
+      },
+      footer: {
+        slogan: "حيث تُشارك اللحظات اللذيذة مع العائلة والأصدقاء.",
+        quickLinks: "روابط سريعة",
+        contactInfo: "معلومات الاتصال",
+        address: "عبد المحسن بن عبد العزيز، الجمعة، المدينة المنورة، المملكة العربية السعودية",
+        rights: "جميع الحقوق محفوظة.",
+      },
     },
   },
 };

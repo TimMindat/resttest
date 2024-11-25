@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Languages } from 'lucide-react';
 
 const LanguageToggle = () => {
   const { i18n } = useTranslation();
@@ -17,8 +16,11 @@ const LanguageToggle = () => {
       onClick={toggleLanguage}
       className="flex items-center text-gray-700 hover:text-orange-500 transition-colors duration-200"
     >
-      <Languages className="w-5 h-5 mr-2" />
-      {i18n.language === 'ar' ? 'English' : 'عربي'}
+      {i18n.language === 'ar' ? (
+        <span className="text-xl font-semibold mx-1">En</span>
+      ) : (
+        <span className="text-xl font-semibold mx-1">ع</span>
+      )}
     </button>
   );
 };

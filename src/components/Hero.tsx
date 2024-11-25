@@ -1,7 +1,10 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       id="home"
@@ -19,11 +22,10 @@ const Hero = () => {
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-3xl text-white">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Family Pie – Where Delicious Moments Are Shared!
+            {t('hero.title')}
           </h1>
           <p className="text-xl mb-8 text-gray-200">
-            Experience the perfect blend of flavors with our handcrafted pizzas, savory pies, and juicy burgers.
-            Made fresh daily for your family.
+            {t('hero.subtitle')}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -31,21 +33,21 @@ const Hero = () => {
               href="#menu"
               className="bg-white text-orange-500 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center"
             >
-              View Menu
-              <ArrowRight className="ml-2 w-5 h-5" />
+              {t('hero.viewMenu')}
+              <ArrowRight className="mx-2 w-5 h-5" />
             </a>
             <a
               href="https://take.app/familypie"
               className="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-200 flex items-center justify-center"
             >
-              Order Online
-              <ArrowRight className="ml-2 w-5 h-5" />
+              {t('hero.orderOnline')}
+              <ArrowRight className="mx-2 w-5 h-5" />
             </a>
           </div>
 
           <div className="mt-8 bg-orange-500 px-6 py-3 rounded-lg inline-block">
             <p className="text-lg font-semibold">
-              🔥 Special Offer: Up to 40% OFF on Pizzas Today!
+              {t('hero.specialOffer')}
             </p>
           </div>
         </div>
