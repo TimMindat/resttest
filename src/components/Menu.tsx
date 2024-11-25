@@ -1,16 +1,19 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Menu = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="menu" className="py-20 bg-orange-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            Explore Our Menu
+            {t('menu.title')}
           </h2>
           <p className="text-lg text-gray-600">
-            Discover our wide selection of delicious dishes
+            {t('menu.subtitle')}
           </p>
         </div>
 
@@ -30,8 +33,8 @@ const Menu = () => {
               href="https://take.app/familypie"
               className="inline-flex items-center bg-orange-500 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition-colors duration-200"
             >
-              Order Your Favorite Dishes Now!
-              <ExternalLink className="ml-2 w-5 h-5" />
+              {t('menu.orderFavorite')}
+              <ExternalLink className="mx-2 w-5 h-5" />
             </a>
           </div>
         </div>

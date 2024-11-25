@@ -1,7 +1,10 @@
 import React from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -13,53 +16,53 @@ const Footer = () => {
               className="h-16 w-auto mb-4"
             />
             <p className="text-gray-400">
-              Where delicious moments are shared with family and friends.
+              {t('footer.slogan')}
             </p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#menu" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Menu
+                  {t('nav.menu')}
                 </a>
               </li>
               <li>
                 <a href="#deals" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Special Deals
+                  {t('nav.specialDeals')}
                 </a>
               </li>
               <li>
                 <a href="#order" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Order Online
+                  {t('nav.orderOnline')}
                 </a>
               </li>
               <li>
                 <a href="#contact" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Contact Us
+                  {t('nav.contact')}
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.contactInfo')}</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin className="w-5 h-5 mr-2 mt-1 text-orange-500" />
+                <MapPin className="w-5 h-5 mx-2 mt-1 text-orange-500" />
                 <span className="text-gray-400">
-                  Abdul Muhsin Ibn Abdul Aziz, Al Jumuah, Madinah, Saudi Arabia
+                  {t('footer.address')}
                 </span>
               </li>
               <li className="flex items-center">
-                <Phone className="w-5 h-5 mr-2 text-orange-500" />
-                <a href="tel:+966558088546" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <Phone className="w-5 h-5 mx-2 text-orange-500" />
+                <a href="tel:+966558088546" className="text-gray-400 hover:text-white transition-colors duration-200 ltr">
                   +966 55 808 8546
                 </a>
               </li>
               <li className="flex items-center">
-                <Mail className="w-5 h-5 mr-2 text-orange-500" />
+                <Mail className="w-5 h-5 mx-2 text-orange-500" />
                 <a href="mailto:contact@familypie.com" className="text-gray-400 hover:text-white transition-colors duration-200">
                   contact@familypie.com
                 </a>
@@ -68,13 +71,13 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Order Now</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('nav.orderOnline')}</h3>
             <div className="space-y-4">
               <a
                 href="https://take.app/familypie"
                 className="block bg-orange-500 text-white px-6 py-2 rounded-full text-center hover:bg-orange-600 transition-colors duration-200"
               >
-                Order Online
+                {t('nav.orderOnline')}
               </a>
               <a
                 href="https://wa.me/966558088546"
@@ -88,7 +91,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 pt-8 mt-8 text-center">
           <p className="text-gray-400">
-            © {new Date().getFullYear()} Family Pie. All Rights Reserved.
+            © {new Date().getFullYear()} {t('footer.rights')}
           </p>
         </div>
       </div>
