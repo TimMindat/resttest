@@ -69,3 +69,5 @@ const Social = () => {
     </section>
   );
 };
+
+export default Social;

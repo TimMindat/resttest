@@ -78,3 +78,5 @@ const OrderOnline = () => {
     </section>
   );
 };
+
+export default OrderOnline;
