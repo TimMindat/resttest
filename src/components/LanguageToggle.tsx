@@ -1,26 +1,15 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const LanguageToggle = () => {
-  const { i18n } = useTranslation();
-
-  const toggleLanguage = () => {
-    const newLang = i18n.language === 'ar' ? 'en' : 'ar';
-    i18n.changeLanguage(newLang);
-    document.documentElement.dir = newLang === 'ar' ? 'rtl' : 'ltr';
-    document.documentElement.lang = newLang;
-  };
+  const { language, setLanguage } = useLanguage();
 
   return (
     <button
-      onClick={toggleLanguage}
-      className="flex items-center text-gray-700 hover:text-orange-500 transition-colors duration-200"
+      onClick={() => setLanguage(language === 'ar' ? 'en' : 'ar')}
+      className="px-4 py-2 rounded-full bg-white text-orange-500 hover:bg-orange-50 transition-colors duration-200 font-medium"
     >
-      {i18n.language === 'ar' ? (
-        <span className="text-xl font-semibold mx-1">En</span>
-      ) : (
-        <span className="text-xl font-semibold mx-1">ع</span>
-      )}
+      {language === 'ar' ? 'English' : 'عربي'}
     </button>
   );
 };

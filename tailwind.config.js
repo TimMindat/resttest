@@ -7,12 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Inter', 'Noto Kufi Arabic', 'sans-serif'],
       },
     },
   },
   plugins: [],
-  corePlugins: {
-    preflight: true,
-  },
 };

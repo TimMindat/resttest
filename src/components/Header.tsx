@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { Menu, Phone, ShoppingBag } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { Menu as MenuIcon, Phone, ShoppingBag } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../utils/translations';
 import LanguageToggle from './LanguageToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { t } = useTranslation();
+  const { language, isRTL } = useLanguage();
 
   const navItems = [
-    { name: t('nav.home'), href: '#home' },
-    { name: t('nav.menu'), href: '#menu' },
-    { name: t('nav.specialDeals'), href: '#deals' },
-    { name: t('nav.orderOnline'), href: '#order' },
-    { name: t('nav.contact'), href: '#contact' },
+    { name: translations.navigation.home[language], href: '#home' },
+    { name: translations.navigation.menu[language], href: '#menu' },
+    { name: translations.navigation.deals[language], href: '#deals' },
+    { name: translations.navigation.orderOnline[language], href: '#order' },
+    { name: translations.navigation.contact[language], href: '#contact' },
   ];
 
   return (
@@ -20,13 +21,17 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <a href="#home" className="flex items-center">
-            <img src="https://i.imgur.com/GumPsYq.png" alt="Family Pie Logo" className="h-16 w-auto" />
+            <img
+              src="https://i.imgur.com/GumPsYq.png"
+              alt={translations.restaurantName[language]}
+              className="h-16 w-auto"
+            />
           </a>
 
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-8 items-center">
             {navItems.map((item) => (
               <a
-                key={item.name}
+                key={item.href}
                 href={item.href}
                 className="text-gray-700 hover:text-orange-500 transition-colors duration-200"
               >
@@ -41,15 +46,17 @@ const Header = () => {
               href="https://wa.me/966558088546"
               className="flex items-center text-green-600 hover:text-green-700"
             >
-              <Phone className="w-5 h-5 mx-2" />
-              <span>WhatsApp</span>
+              <Phone className="w-5 h-5 mr-2" />
+              <span>{translations.hero.whatsapp[language]}</span>
             </a>
             <a
               href="https://take.app/familypie"
-              className="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors duration-200 flex items-center"
+              className={`bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors duration-200 flex items-center ${
+                isRTL ? 'flex-row-reverse' : ''
+              }`}
             >
-              <ShoppingBag className="w-5 h-5 mx-2" />
-              {t('nav.orderOnline')}
+              <ShoppingBag className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
+              {translations.orderOnline[language]}
             </a>
           </div>
 
@@ -57,7 +64,7 @@ const Header = () => {
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <Menu className="w-6 h-6 text-gray-700" />
+            <MenuIcon className="w-6 h-6 text-gray-700" />
           </button>
         </div>
 
@@ -66,7 +73,7 @@ const Header = () => {
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
-                  key={item.name}
+                  key={item.href}
                   href={item.href}
                   className="text-gray-700 hover:text-orange-500 transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
@@ -79,15 +86,17 @@ const Header = () => {
                 href="https://wa.me/966558088546"
                 className="flex items-center text-green-600 hover:text-green-700"
               >
-                <Phone className="w-5 h-5 mx-2" />
-                <span>WhatsApp</span>
+                <Phone className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                <span>{translations.hero.whatsapp[language]}</span>
               </a>
               <a
                 href="https://take.app/familypie"
-                className="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors duration-200 flex items-center justify-center"
+                className={`bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors duration-200 flex items-center justify-center ${
+                  isRTL ? 'flex-row-reverse' : ''
+                }`}
               >
-                <ShoppingBag className="w-5 h-5 mx-2" />
-                {t('nav.orderOnline')}
+                <ShoppingBag className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                {translations.orderOnline[language]}
               </a>
             </div>
           </div>

@@ -1,24 +1,25 @@
 import React from 'react';
 import { Tag, ArrowRight } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../utils/translations';
 
 const Deals = () => {
-  const { t } = useTranslation();
+  const { language, isRTL } = useLanguage();
 
   const deals = [
     {
-      title: t('deals.deal1.title'),
-      description: t('deals.deal1.description'),
+      title: translations.deals.items.burgerDeal.title[language],
+      description: translations.deals.items.burgerDeal.description[language],
       image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd"
     },
     {
-      title: t('deals.deal2.title'),
-      description: t('deals.deal2.description'),
+      title: translations.deals.items.piesDeal.title[language],
+      description: translations.deals.items.piesDeal.description[language],
       image: "https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81"
     },
     {
-      title: t('deals.deal3.title'),
-      description: t('deals.deal3.description'),
+      title: translations.deals.items.familyDeal.title[language],
+      description: translations.deals.items.familyDeal.description[language],
       image: "https://images.unsplash.com/photo-1513104890138-7c749659a591"
     }
   ];
@@ -28,10 +29,10 @@ const Deals = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            {t('deals.title')}
+            {translations.deals.title[language]}
           </h2>
           <p className="text-lg text-gray-600">
-            {t('deals.subtitle')}
+            {translations.deals.description[language]}
           </p>
         </div>
 
@@ -60,10 +61,12 @@ const Deals = () => {
                 </p>
                 <a
                   href="https://take.app/familypie"
-                  className="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold"
+                  className={`inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold ${
+                    isRTL ? 'flex-row-reverse' : ''
+                  }`}
                 >
-                  {t('deals.orderNow')}
-                  <ArrowRight className="mx-2 w-5 h-5" />
+                  {translations.deals.orderNow[language]}
+                  <ArrowRight className={`w-5 h-5 ${isRTL ? 'ml-2 rotate-180' : 'mr-2'}`} />
                 </a>
               </div>
             </div>
@@ -73,5 +76,3 @@ const Deals = () => {
     </section>
   );
 };
-
-export default Deals;

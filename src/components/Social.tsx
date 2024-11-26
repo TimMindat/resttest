@@ -1,10 +1,11 @@
 import React from 'react';
-import { Instagram, Facebook, Telegram, MessageCircle } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { Instagram, Facebook, MessageCircle } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../utils/translations';
 
 const Social = () => {
-  const { t } = useTranslation();
-  
+  const { language } = useLanguage();
+
   const socialLinks = [
     {
       name: "Instagram",
@@ -16,15 +17,6 @@ const Social = () => {
       name: "TikTok",
       url: "https://www.tiktok.com/@familypieksa",
       icon: MessageCircle,
-      customIcon: (
-        <svg 
-          viewBox="0 0 24 24" 
-          className="w-6 h-6"
-          fill="currentColor"
-        >
-          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-        </svg>
-      ),
       color: "bg-black"
     },
     {
@@ -36,7 +28,7 @@ const Social = () => {
     {
       name: "Telegram",
       url: "https://t.me/Familypie12bot",
-      icon: Telegram,
+      icon: MessageCircle,
       color: "bg-blue-400"
     }
   ];
@@ -46,10 +38,10 @@ const Social = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            {t('social.title')}
+            {translations.social.title[language]}
           </h2>
           <p className="text-lg text-gray-600">
-            {t('social.subtitle')}
+            {translations.social.description[language]}
           </p>
         </div>
 
@@ -64,7 +56,7 @@ const Social = () => {
             >
               <div className="flex flex-col items-center p-6 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors duration-200">
                 <div className={`${social.color} p-4 rounded-full text-white mb-4`}>
-                  {social.customIcon ? social.customIcon : <social.icon className="w-6 h-6" />}
+                  <social.icon className="w-6 h-6" />
                 </div>
                 <span className="font-semibold text-gray-800 group-hover:text-orange-500 transition-colors duration-200">
                   {social.name}
@@ -77,5 +69,3 @@ const Social = () => {
     </section>
   );
 };
-
-export default Social;

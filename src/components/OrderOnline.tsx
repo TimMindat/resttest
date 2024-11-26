@@ -1,9 +1,10 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../utils/translations';
 
 const OrderOnline = () => {
-  const { t } = useTranslation();
+  const { language } = useLanguage();
 
   const platforms = [
     {
@@ -28,10 +29,10 @@ const OrderOnline = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            {t('orderOnline.title')}
+            {translations.orderOnlinePage.title[language]}
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            {t('orderOnline.subtitle')}
+            {translations.orderOnlinePage.description[language]}
           </p>
         </div>
 
@@ -54,8 +55,8 @@ const OrderOnline = () => {
                   <div className="text-white text-center">
                     <h3 className="text-2xl font-bold mb-2">{platform.name}</h3>
                     <span className="inline-flex items-center">
-                      {t('deals.orderNow')}
-                      <ExternalLink className="mx-2 w-5 h-5" />
+                      {translations.deals.orderNow[language]}
+                      <ExternalLink className="mr-2 w-5 h-5" />
                     </span>
                   </div>
                 </div>
@@ -69,13 +70,11 @@ const OrderOnline = () => {
             href="https://wa.me/966558088546"
             className="inline-flex items-center bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition-colors duration-200"
           >
-            {t('orderOnline.whatsapp')}
-            <ExternalLink className="mx-2 w-5 h-5" />
+            {translations.orderOnlinePage.whatsappButton[language]}
+            <ExternalLink className="mr-2 w-5 h-5" />
           </a>
         </div>
       </div>
     </section>
   );
 };
-
-export default OrderOnline;

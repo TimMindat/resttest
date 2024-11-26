@@ -1,19 +1,20 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../utils/translations';
 
 const Menu = () => {
-  const { t } = useTranslation();
+  const { language } = useLanguage();
 
   return (
     <section id="menu" className="py-20 bg-orange-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            {t('menu.title')}
+            {translations.menu.title[language]}
           </h2>
           <p className="text-lg text-gray-600">
-            {t('menu.subtitle')}
+            {translations.menu.description[language]}
           </p>
         </div>
 
@@ -33,8 +34,8 @@ const Menu = () => {
               href="https://take.app/familypie"
               className="inline-flex items-center bg-orange-500 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition-colors duration-200"
             >
-              {t('menu.orderFavorite')}
-              <ExternalLink className="mx-2 w-5 h-5" />
+              {translations.menu.orderButton[language]}
+              <ExternalLink className="mr-2 w-5 h-5" />
             </a>
           </div>
         </div>
@@ -42,5 +43,3 @@ const Menu = () => {
     </section>
   );
 };
-
-export default Menu;
