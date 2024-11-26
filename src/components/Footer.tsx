@@ -99,10 +99,12 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 pt-8 mt-8 text-center">
           <p className="text-gray-400">
-            © {currentYear} {translations.restaurantName[language]}. {translations.footer.copyright[language]}.
+            © {currentYear} {translations.restaurantName[language]}. {translations.footer.copyright[language]}
           </p>
         </div>
       </div>
     </footer>
   );
 };
+
+export default Footer;

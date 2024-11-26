@@ -76,3 +76,5 @@ const Deals = () => {
     </section>
   );
 };
+
+export default Deals;
